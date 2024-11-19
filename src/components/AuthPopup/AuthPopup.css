@@ -1,0 +1,69 @@
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.authform{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    width: 50%;
+    min-height: 50%;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(210, 205, 205, 0.75);
+}
+
+.authform .left{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.authform .left img{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.authform .right{
+    width: 50%;
+    height: 100%;
+    border-left: 1px solid var(--col1);
+    padding: 20px;
+}
+
+.authform .right h1{
+    -webkit-text-stroke: 1px var(--col1);
+    color: transparent;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin:10px 0px ;
+}
+
+.authform .right form{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.authform p{
+    margin: 10px 0px;
+}
+
+.authform .form_input_leftright{
+    display: flex;
+    gap: 10px;
+}
