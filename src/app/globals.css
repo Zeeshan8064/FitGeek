@@ -4,11 +4,11 @@
   }
 
   :root{
-    --col1: #ffc20e;
+    --col1: #dc1313;
   }
 
   body{
-    background-color: black;
+    background-color: rgb(57, 55, 55);
   }
 
   .mainhead1{

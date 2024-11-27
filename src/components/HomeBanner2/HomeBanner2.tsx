@@ -5,9 +5,10 @@ import './HomeBanner2.css'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
 const HomeBanner2 = () => {
@@ -73,26 +74,18 @@ const HomeBanner2 = () => {
     <div>
       <h1 className='mainhead1'>Workouts</h1>
       <Swiper
-        slidesPerView={5}
-        spaceBetween={5}
+      slidesPerView={3}
+        spaceBetween={30}
+        centeredSlides={false}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 5,
-            spaceBetween: 50,
-          },
-        }}
-        modules={[Pagination]}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         {

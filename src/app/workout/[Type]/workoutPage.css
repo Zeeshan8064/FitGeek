@@ -1,10 +1,16 @@
 .workout {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 20px;
-    background-color: black;
+    margin: auto;
+    padding: auto;
+    background-color: rgb(57, 55, 55);
     color: white;
     text-align: center;
+}
+h1.workout{
+    -webkit-text-stroke: 1px rgb(237, 217, 33);
+    color: transparent;
+    font-size: 7.5em;
+    font-weight: 900;
 }
 
 .workout__exercises{
@@ -45,7 +51,7 @@
 }
 
 .workout__exercise__content h2{
-    -webkit-text-stroke: 1px var(--col1);
+    -webkit-text-stroke: 1px rgb(237, 217, 33);
     color: transparent;
     font-size: 50px;
     font-weight: 900;
@@ -64,12 +70,12 @@
 .workout__exercise__content p{
     font-size: 20px;
     font-weight: 300;
-    color: var(--col1);
+    color: rgb(237, 217, 33);
 }
 
 .workout__exercises h3{
-    --webkit-text-stroke: 1px var(--col1);
-    color: var(--col1);
+    --webkit-text-stroke: 1px rgb(237, 217, 33);
+    color: rgb(237, 217, 33);
     font-size: 7.5rem;
     font-weight: 900;
     text-align: center;

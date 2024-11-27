@@ -2,6 +2,7 @@ import React from 'react'
 import { CircularProgress } from '@mui/joy'
 import { AiOutlineEye } from 'react-icons/ai'
 import './HomeBanner1.css'
+import { WiDayStormShowers } from 'react-icons/wi'
 const HomeBanner1 = () => {
 
 
@@ -89,9 +90,9 @@ function simplifyFraction(numerator: number, denominator: number): [number, numb
           </div>
 
           <CircularProgress
-            color="neutral"
+            color="danger"
             determinate
-            variant="solid"
+            variant="soft"
             size='lg'
             value={
               (item.value/item.goal)*100
@@ -105,7 +106,11 @@ function simplifyFraction(numerator: number, denominator: number): [number, numb
 
           </CircularProgress>
 
-        <button>Show Report<AiOutlineEye/></button>
+        <button
+        onClick={()=>{
+          window.location.href = `/report/${item.name}`
+        }}
+        >Show Report<AiOutlineEye/></button>
         </div>
         )
       })

@@ -48,7 +48,7 @@ const page = () => {
 
     return (
         <div className='workout'>
-            <h1 className='mainhead1'>{workout?.type} Day</h1>
+            <h1 className='workout'>{workout?.type} Day</h1>
             <div className='workout__exercises'>
                 {
                     workout?.exercises.map((item: any, index: number) => {
