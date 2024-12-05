@@ -12,6 +12,27 @@ const Navbar = () => {
 
   // Simulate login status
   const [showpopup, setShowPopup] = React.useState<boolean>(false)
+
+  const checklogin = async () => {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/auth/checklogin', {
+      method: 'POST',
+      credentials: 'include',
+    })
+    .then(res => res.json())
+    .then(data => {
+       console.log(data)
+       if (data.ok){
+         setIsLoggedIn(true)
+       }else {
+         setIsLoggedIn(false)
+       }
+     })
+
+  }
+
+  React.useEffect(() => {
+    checklogin()}, [showpopup])
+
   return (
     <nav>
       <Image src={logo} alt="Logo" />
