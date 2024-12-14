@@ -30,6 +30,23 @@ const Navbar = () => {
 
   }
 
+  const handleLogout = async () => {
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_BACKEND_API + "/auth/logout", {
+        method: "POST",
+        credentials: "include", // Ensures cookies are sent with the request
+      });
+      const data = await response.json();
+      if (data.ok) {
+        setIsLoggedIn(false); // Update state to reflect logged-out status
+      } else {
+        console.error("Logout failed:", data.message);
+      }
+    } catch (error) {
+      console.log("Error during logout:", error);
+    }
+  };
+
   React.useEffect(() => {
     checklogin()}, [showpopup])
 
@@ -40,7 +57,11 @@ const Navbar = () => {
       <Link href= '/about'>About</Link>
       <Link href= '/profile'><IoIosBody/></Link>
       {
-        isloggedIn? <button>Logout</button>
+        isloggedIn? <button
+        onClick={()=>{
+          setIsLoggedIn(false)
+          handleLogout()
+        }}>Logout</button>
         :
         <button onClick={()=>{
           setShowPopup(true)
@@ -48,7 +69,7 @@ const Navbar = () => {
       }
 
       {
-        showpopup && <AuthPopup setShowPopup={setShowPopup}/>
+        showpopup && <AuthPopup onLogin={checklogin} setShowPopup={setShowPopup}/>
       }
     </nav>
   )

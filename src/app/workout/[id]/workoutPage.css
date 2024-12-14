@@ -2,12 +2,12 @@
     font-family: Arial, sans-serif;
     margin: auto;
     padding: auto;
-    background-color: rgb(57, 55, 55);
+    background-color: rgb(45, 44, 44);
     color: white;
     text-align: center;
 }
 h1.workout{
-    -webkit-text-stroke: 1px rgb(237, 217, 33);
+    -webkit-text-stroke: 1px var(--col1);
     color: transparent;
     font-size: 7.5em;
     font-weight: 900;
@@ -32,9 +32,8 @@ h1.workout{
 }
 
 .workout__exercise__image img{
-    max-width: 100%;
     height: auto;
-    min-width: 300px;
+    width: 300px;
 }
 
 .workout__exercise__content{
@@ -51,7 +50,7 @@ h1.workout{
 }
 
 .workout__exercise__content h2{
-    -webkit-text-stroke: 1px rgb(237, 217, 33);
+    -webkit-text-stroke: 1px var(--col1);
     color: transparent;
     font-size: 50px;
     font-weight: 900;

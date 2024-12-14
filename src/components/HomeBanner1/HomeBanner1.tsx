@@ -45,33 +45,68 @@ const getData = async () => {
       "goal": 70,
       "goalunit": "kg"
     },
-    {
-      "name":"Workout",
-      "value":2,
-      "unit":"days",
-      "goal":6,
-      "goalunit":"days"
-    }
-
   ]
-  setData(temp)
-  console.log(temp)
+
+  fetch(process.env.NEXT_PUBLIC_BACKEND_API+'/report/getreport',{
+    method: "GET",
+    credentials: 'include'
+  })
+  .then(res => {
+    return res.json()
+  })
+  .then(data => {
+    console.log(data)
+    if (data && data.ok) {
+      setData(data.data);
+    } else {
+      setData(temp)
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    setData(temp);
+  })
 }
 
 React.useEffect(()=>{
   getData()
 },[])
 
-function simplifyFraction(numerator: number, denominator: number): [number, number]{
-  function gcd(a: number, b: number): number {
-    return b === 0? a : gcd(b, a % b);
+function simplifyFraction(numerator: number, denominator: number): [number, number] {
+  if (denominator === 0) {
+    throw new Error("Denominator cannot be zero");
   }
-  const commonDivisor: number= gcd(numerator, denominator);
-  //Simplify the fraction
-  const simplifiedNumerator: number = numerator / commonDivisor;
-  const simplifiedDenominator: number = denominator / commonDivisor;
-  return [simplifiedNumerator, simplifiedDenominator];
+
+  // Get the greatest common divisor (GCD)
+  function gcd(a: number, b: number): number {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    while (b !== 0) {
+      const temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a;
+  }
+  const intNumerator = Math.round(numerator);
+  const intDenominator = Math.round(denominator);
+
+  // Calculate the GCD of the numerator and denominator
+  const commonDivisor = gcd(intNumerator, intDenominator);
+
+
+  // Simplify the fraction
+  const simplifiedNumerator = numerator / commonDivisor;
+  const simplifiedDenominator = denominator / commonDivisor;
+
+  // Round the simplified fraction values to 1 decimal place
+  const roundedNumerator = Math.round(simplifiedNumerator);
+  const roundedDenominator = Math.round(simplifiedDenominator);
+
+  return [roundedNumerator, roundedDenominator];
 }
+
+
   return (
     <div className='meters'>
     {
@@ -81,11 +116,11 @@ function simplifyFraction(numerator: number, denominator: number): [number, numb
           <div className='card-header'>
             <div className='card-header-box'>
               <div className='card-header-box-name'>{item.name}</div>
-              <div className='card-header-box-value'>{item.value}{item.unit}</div>
+              <div className='card-header-box-value'>{parseInt(item.value)}{item.unit}</div>
             </div>
             <div className='card-header-box'>
               <div className='card-header-box-name'>Target</div>
-              <div className='card-header-box-value'>{item.goal}{item.goalunit}</div>
+              <div className='card-header-box-value'>{parseInt(item.goal)}{item.goalunit}</div>
             </div>
           </div>
 
