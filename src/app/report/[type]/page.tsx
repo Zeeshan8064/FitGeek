@@ -14,7 +14,6 @@ import { toast } from "react-toastify";
 const page = () => {
   const color = "#dc1313";
   const pathname = usePathname();
-  console.log(pathname);
   const chartsParams = {
     height: 250,
     width: 500,
@@ -302,16 +301,11 @@ const page = () => {
   const [showWaterTrackPopup, setShowWaterTrackPopup] = React.useState<boolean>(false);
   const [showWeightTrackPopup, setShowWeightTrackPopup] = React.useState<boolean>(false);
 
-    return (
+  return (
     <div className="reportpage">
       <div className="s1">
         {dataS1?.data?.length > 0 && dataS1?.xAxis?.data?.length > 0 ? (
           <>
-            {console.log("Rendering LineChart with:", {
-              series: dataS1.data,
-              xAxis: dataS1.xAxis.data,
-              scaleType: dataS1.xAxis.scaleType,
-            })}
             <LineChart
               xAxis={[
                 {
@@ -347,13 +341,13 @@ const page = () => {
         onClick={() => {
           if (pathname == "/report/Calorie%20Intake") {
             setShowCalorieIntakePopup(true);
-          } else  if (pathname == "/report/Sleep"){
+          } else if (pathname == "/report/Sleep") {
             setShowSleepTrackPopup(true);
-          } else if (pathname == "/report/Steps"){
+          } else if (pathname == "/report/Steps") {
             setShowStepTrackPopup(true);
-          } else if (pathname == "/report/Water"){
+          } else if (pathname == "/report/Water") {
             setShowWaterTrackPopup(true);
-          } else if (pathname == "/report/Weight"){
+          } else if (pathname == "/report/Weight") {
             setShowWeightTrackPopup(true);
           }
         }}
@@ -362,34 +356,27 @@ const page = () => {
       </button>
 
       {showCalorieIntakePopup && (
-        <CaloriIntakePopup
-          setShowCalorieIntakePopup={setShowCalorieIntakePopup}
-        />
+        <CaloriIntakePopup setShowCalorieIntakePopup={setShowCalorieIntakePopup} />
       )}
 
       {showSleepTrackPopup && (
-        <SleepTrackPopup
-          setShowSleepTrackPopup={setShowSleepTrackPopup}
-        />
+        <SleepTrackPopup setShowSleepTrackPopup={setShowSleepTrackPopup} />
       )}
 
       {showStepTrackPopup && (
-        <StepTrackPopup
-          setShowStepTrackPopup={setShowStepTrackPopup}
-        />)}
+        <StepTrackPopup setShowStepTrackPopup={setShowStepTrackPopup} />
+      )}
 
       {showWaterTrackPopup && (
-        <WaterTrackPopup
-          setShowWaterTrackPopup={setShowWaterTrackPopup}
-        />)}
+        <WaterTrackPopup setShowWaterTrackPopup={setShowWaterTrackPopup} />
+      )}
 
       {showWeightTrackPopup && (
-        <WeightTrackPopup
-          setShowWeightTrackPopup={setShowWeightTrackPopup}
-        />)}
-
+        <WeightTrackPopup setShowWeightTrackPopup={setShowWeightTrackPopup} />
+      )}
     </div>
   );
+
 };
 
 export default page;
