@@ -1,13 +1,16 @@
 {
   "name": "fitnessgeek",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
-  }
+    "lint": "next lint",
+    "predeploy": "next build && next export",
+    "deploy": "gh-pages -d out"
+  },
+  "homepage": "https://zeeshan8064.github.io/FitGeek/",
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
