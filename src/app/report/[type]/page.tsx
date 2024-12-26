@@ -30,7 +30,7 @@ const page = () => {
   });
 
   const getDataForS1 = async () => {
-    if (pathname == "/report/Calorie%20Intake") {
+    if (pathname == "/report/Calorie%20Intake" || pathname == "/report/Cal%20Intake") {
         fetch(
         process.env.NEXT_PUBLIC_BACKEND_API +
           "/calorieintake/getcalorieintakebylimit",
