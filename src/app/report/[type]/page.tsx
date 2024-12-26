@@ -132,7 +132,8 @@ const page = () => {
           console.log(err);
           toast.error("Error fetching data");
         });
-    } else if (pathname == "/report/Steps") {
+    } else if
+    (pathname == "/report/Steps") {
       fetch(
       process.env.NEXT_PUBLIC_BACKEND_API +
         "/steptrack/getstepsbylimit",

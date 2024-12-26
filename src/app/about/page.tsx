@@ -37,10 +37,6 @@ const About = () => {
                 <h3>Sleep</h3>
                 <p>Track your sleeping patterns and improve your rest for better recovery.</p>
               </div>
-              <div className="feature">
-                <h3>Workouts</h3>
-                <p>Access a variety of workouts and exercises tailored to your fitness goals.</p>
-              </div>
             </div>
           </div>
         </section>
