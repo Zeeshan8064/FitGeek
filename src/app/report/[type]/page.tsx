@@ -11,6 +11,7 @@ import WeightTrackPopup from "@/components/ReportFormPopup/WeightTrack/WeightTra
 import { usePathname } from "next/navigation";
 import { toast } from "react-toastify";
 
+
 const page = () => {
   const color = "#dc1313";
   const pathname = usePathname();
@@ -304,78 +305,79 @@ const page = () => {
 
   return (
     <div className="reportpage">
-      <div className="s1">
-        {dataS1?.data?.length > 0 && dataS1?.xAxis?.data?.length > 0 ? (
-          <>
-            <LineChart
-              xAxis={[
-                {
-                  id: "Day",
-                  data: dataS1.xAxis.data,
-                  scaleType: dataS1.xAxis.scaleType,
-                  label: dataS1.xAxis.label,
-                  valueFormatter: (timestamp: number) => {
-                    const date = new Date(timestamp);
-                    return `${date.getDate()}/${
-                      date.getMonth() + 1
-                    }/${date.getFullYear()}`;
-                  },
+    <div className="s1">
+      {dataS1?.data?.length > 0 && dataS1?.xAxis?.data?.length > 0 ? (
+        <>
+          <LineChart
+            xAxis={[
+              {
+                id: "Day",
+                data: dataS1.xAxis.data,
+                scaleType: dataS1.xAxis.scaleType,
+                label: dataS1.xAxis.label,
+                valueFormatter: (timestamp: number) => {
+                  const date = new Date(timestamp);
+                  return `${date.getDate()}/${
+                    date.getMonth() + 1
+                  }/${date.getFullYear()}`;
                 },
-              ]}
-              series={[
-                {
-                  data: dataS1.data,
-                  label: dataS1.title,
-                  color: dataS1.color,
-                },
-              ]}
-              {...chartsParams}
-            />
-          </>
-        ) : (
-          <p>Loading data...</p>
-        )}
-      </div>
-
-      <button
-        className="editbutton"
-        onClick={() => {
-          if (pathname == "/report/Calorie%20Intake") {
-            setShowCalorieIntakePopup(true);
-          } else if (pathname == "/report/Sleep") {
-            setShowSleepTrackPopup(true);
-          } else if (pathname == "/report/Steps") {
-            setShowStepTrackPopup(true);
-          } else if (pathname == "/report/Water") {
-            setShowWaterTrackPopup(true);
-          } else if (pathname == "/report/Weight") {
-            setShowWeightTrackPopup(true);
-          }
-        }}
-      >
-        <AiFillEdit />
-      </button>
-
-      {showCalorieIntakePopup && (
-        <CaloriIntakePopup setShowCalorieIntakePopup={setShowCalorieIntakePopup} />
-      )}
-
-      {showSleepTrackPopup && (
-        <SleepTrackPopup setShowSleepTrackPopup={setShowSleepTrackPopup} />
-      )}
-
-      {showStepTrackPopup && (
-        <StepTrackPopup setShowStepTrackPopup={setShowStepTrackPopup} />
-      )}
-
-      {showWaterTrackPopup && (
-        <WaterTrackPopup setShowWaterTrackPopup={setShowWaterTrackPopup} />
-      )}
-
-      {showWeightTrackPopup && (
-        <WeightTrackPopup setShowWeightTrackPopup={setShowWeightTrackPopup} />
+              },
+            ]}
+            series={[
+              {
+                data: dataS1.data,
+                label: dataS1.title,
+                color: dataS1.color,
+              },
+            ]}
+            {...chartsParams}
+          />
+        </>
+      ) : (
+        <p>Loading data...</p>
       )}
     </div>
+
+    <button
+      className="editbutton"
+      onClick={() => {
+        if (pathname == "/report/Calorie%20Intake") {
+          setShowCalorieIntakePopup(true);
+        } else if (pathname == "/report/Sleep") {
+          setShowSleepTrackPopup(true);
+        } else if (pathname == "/report/Steps") {
+          setShowStepTrackPopup(true);
+        } else if (pathname == "/report/Water") {
+          setShowWaterTrackPopup(true);
+        } else if (pathname == "/report/Weight") {
+          setShowWeightTrackPopup(true);
+        }
+      }}
+    >
+      <AiFillEdit />
+    </button>
+
+    {showCalorieIntakePopup && (
+      <CaloriIntakePopup setShowCalorieIntakePopup={setShowCalorieIntakePopup} />
+    )}
+
+    {showSleepTrackPopup && (
+      <SleepTrackPopup setShowSleepTrackPopup={setShowSleepTrackPopup} />
+    )}
+
+    {showStepTrackPopup && (
+      <StepTrackPopup setShowStepTrackPopup={setShowStepTrackPopup} />
+    )}
+
+    {showWaterTrackPopup && (
+      <WaterTrackPopup setShowWaterTrackPopup={setShowWaterTrackPopup} />
+    )}
+
+    {showWeightTrackPopup && (
+      <WeightTrackPopup setShowWeightTrackPopup={setShowWeightTrackPopup} />
+    )}
+      </div>
+
   );
 
 };

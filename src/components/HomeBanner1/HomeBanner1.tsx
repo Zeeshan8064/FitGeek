@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { CircularProgress } from '@mui/joy'
 import { AiOutlineEye } from 'react-icons/ai'

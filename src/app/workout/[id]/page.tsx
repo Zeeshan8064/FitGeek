@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import "./workoutPage.css";
 
@@ -7,7 +7,6 @@ const WorkoutPage: React.FC = () => {
   const [workoutId, setWorkoutId] = useState<string | null>(null);
 
   useEffect(() => {
-    // Get the workout ID from the URL
     const workoutIdFromUrl = window.location.pathname.split("/").pop();
     setWorkoutId(workoutIdFromUrl || null);
   }, []);
@@ -45,32 +44,33 @@ const WorkoutPage: React.FC = () => {
 
   return (
     <div className="workout">
-      <h1 className="workout">{data?.name} Day</h1>
-      <div className="workout__exercises">
-        {data?.exercises?.map((item: any, index: number) => (
-          <div
-            key={index}
-            className={
-              index % 2 === 0
-                ? "workout__exercise"
-                : "workout__exercise workout__exercise--reverse"
-            }
-          >
-            <h3>{index + 1}</h3>
-            <div className="workout__exercise__image">
-              <img src={item.imageURL} alt="" />
-            </div>
-            <div className="workout__exercise__content">
-              <h2>{item.name}</h2>
-              <span>
-                {item.sets} sets x {item.reps}
-              </span>
-              <p>{item.description}</p>
-            </div>
+    <h1 className="workout">{data?.name} Day</h1>
+    <div className="workout__exercises">
+      {data?.exercises?.map((item: any, index: number) => (
+        <div
+          key={index}
+          className={
+            index % 2 === 0
+              ? "workout__exercise"
+              : "workout__exercise workout__exercise--reverse"
+          }
+        >
+          <h3>{index + 1}</h3>
+          <div className="workout__exercise__image">
+            <img src={item.imageURL} alt="" />
           </div>
-        ))}
-      </div>
+          <div className="workout__exercise__content">
+            <h2>{item.name}</h2>
+            <span>
+              {item.sets} sets x {item.reps}
+            </span>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      ))}
     </div>
+  </div>
+
   );
 };
 

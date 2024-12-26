@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import '../popup.css'
 import TextField from '@mui/material/TextField';
