@@ -48,7 +48,7 @@ const getData = async () => {
     },
   ]
 
-  fetch(process.env.NEXT_PUBLIC_BACKEND_API+'/report/getreport',{
+  fetch(process.env.NEXT_PUBLIC_BACKEND_API+'report/getreport',{
     method: "GET",
     credentials: 'include'
   })

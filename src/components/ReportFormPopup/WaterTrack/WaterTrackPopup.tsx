@@ -42,7 +42,7 @@ const WaterTrackPopup: React.FC<WaterTrackPopupProps> = ({
       return;
     }
 
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "/watertrack/addwaterentry", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "watertrack/addwaterentry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ const WaterTrackPopup: React.FC<WaterTrackPopupProps> = ({
 
   const getWaterIntake = async () => {
     console.log("Fetching step data for date:", dayjs.utc(date).format("YYYY-MM-DD"));
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "/watertrack/getwaterbydate", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "watertrack/getwaterbydate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -103,7 +103,7 @@ const WaterTrackPopup: React.FC<WaterTrackPopupProps> = ({
   const deleteWaterIntake = async (item: any) => {
     console.log("Deleting water entry:", item._id);
     fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API + "/watertrack/deletewaterentry",
+      process.env.NEXT_PUBLIC_BACKEND_API + "watertrack/deletewaterentry",
       {
         method: "DELETE",
         headers: {

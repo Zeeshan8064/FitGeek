@@ -37,7 +37,7 @@ const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIn
 
     console.log(finaldatetime + ' finaldatetime' )
 
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/calorieintake/addcalorieintake',{
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'calorieintake/addcalorieintake',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIn
 
   const getCalorieIntake = async ()  => {
     setItems([])
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/calorieintake/getcalorieintakebydate',{
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'calorieintake/getcalorieintakebydate',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIn
   }, [date])
 
   const deleteCalorieIntake = async (item: any) => {
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/calorieintake/deletecalorieintake',{
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'calorieintake/deletecalorieintake',{
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

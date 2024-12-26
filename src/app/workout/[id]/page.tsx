@@ -18,7 +18,7 @@ const WorkoutPage: React.FC = () => {
       console.log("getWorkout", workoutId);
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_API}/workoutplans/workouts/${workoutId}`,
+          `${process.env.NEXT_PUBLIC_BACKEND_API}workoutplans/workouts/${workoutId}`,
           {
             method: "GET",
             credentials: "include",

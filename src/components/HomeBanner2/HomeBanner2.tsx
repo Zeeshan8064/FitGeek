@@ -18,7 +18,7 @@ const HomeBanner2 = () => {
   const workoutid = searchParams.get('id');
 
   const getData = async () => {
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/workoutplans/workouts', {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'workoutplans/workouts', {
       method: 'GET',
       credentials: 'include',
     })

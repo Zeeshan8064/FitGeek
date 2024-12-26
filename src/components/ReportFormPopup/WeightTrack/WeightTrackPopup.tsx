@@ -43,7 +43,7 @@ const WeightTrackPopup: React.FC<WeightTrackPopupProps> = ({
       return;
     }
 
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "/weighttrack/addweightentry", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "weighttrack/addweightentry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const WeightTrackPopup: React.FC<WeightTrackPopupProps> = ({
 
   const getWeighttoday = async () => {
     console.log("Fetching step data for date:", dayjs.utc(date).format("YYYY-MM-DD"));
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "/weighttrack/getweightbydate", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "weighttrack/getweightbydate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const WeightTrackPopup: React.FC<WeightTrackPopupProps> = ({
   const deleteWeighttoday = async (item: any) => {
     console.log("Deleting weight entry:", item._id);
     fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API + "/weighttrack/deleteweightentry",
+      process.env.NEXT_PUBLIC_BACKEND_API + "weighttrack/deleteweightentry",
       {
         method: "DELETE",
         headers: {

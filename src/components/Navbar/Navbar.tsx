@@ -14,7 +14,7 @@ const Navbar = () => {
   const [showpopup, setShowPopup] = React.useState<boolean>(false)
 
   const checklogin = async () => {
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/auth/checklogin', {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'auth/checklogin', {
       method: 'POST',
       credentials: 'include',
     })
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_BACKEND_API + "/auth/logout", {
+      const response = await fetch(process.env.NEXT_PUBLIC_BACKEND_API + "auth/logout", {
         method: "POST",
         credentials: "include", // Ensures cookies are sent with the request
       });

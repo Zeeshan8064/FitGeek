@@ -44,7 +44,7 @@ const SleepTrackPopup: React.FC<SleepTrackPopupProps> = ({
       return;
     }
 
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "/sleeptrack/addsleepentry", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "sleeptrack/addsleepentry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const SleepTrackPopup: React.FC<SleepTrackPopupProps> = ({
 
   const getSleepIntake = async () => {
     console.log("Fetching sleep data for date:", dayjs.utc(date).format("YYYY-MM-DD"));
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "/sleeptrack/getsleepbydate", {
+    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "sleeptrack/getsleepbydate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const SleepTrackPopup: React.FC<SleepTrackPopupProps> = ({
   const deleteSleepIntake = async (item: any) => {
     console.log("Deleting sleep entry:", item._id);
     fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API + "/sleeptrack/deletesleepentry",
+      process.env.NEXT_PUBLIC_BACKEND_API + "sleeptrack/deletesleepentry",
       {
         method: "DELETE",
         headers: {
