@@ -33,8 +33,8 @@ const page = () => {
   const getDataForS1 = async () => {
     if (pathname == "/report/Calorie%20Intake" || pathname == "/report/Cal%20Intake") {
         fetch(
-        process.env.NEXT_PUBLIC_BACKEND_API +
-          "calorieintake/getcalorieintakebylimit",
+      
+          "https://fitnessgeekbackend-production.up.railway.app/calorieintake/getcalorieintakebylimit",
         {
           method: "POST",
           credentials: "include",
@@ -84,8 +84,8 @@ const page = () => {
         });
     } else if (pathname == "/report/Sleep") {
         fetch(
-        process.env.NEXT_PUBLIC_BACKEND_API +
-          "sleeptrack/getsleepbylimit",
+        
+          "https://fitnessgeekbackend-production.up.railway.app/sleeptrack/getsleepbylimit",
         {
           method: "POST",
           credentials: "include",
@@ -136,8 +136,8 @@ const page = () => {
     } else if
     (pathname == "/report/Steps") {
       fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API +
-        "steptrack/getstepsbylimit",
+     
+        "https://fitnessgeekbackend-production.up.railway.app/steptrack/getstepsbylimit",
       {
         method: "POST",
         credentials: "include",
@@ -187,8 +187,8 @@ const page = () => {
       });
     } else if (pathname == "/report/Water") {
       fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API +
-        "watertrack/getwaterbylimit",
+   
+        "https://fitnessgeekbackend-production.up.railway.app/watertrack/getwaterbylimit",
       {
         method: "POST",
         credentials: "include",
@@ -238,8 +238,8 @@ const page = () => {
       });
     } else if (pathname == "/report/Weight") {
       fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API +
-        "weighttrack/getweightbylimit",
+ 
+        "https://fitnessgeekbackend-production.up.railway.app/weighttrack/getweightbylimit",
       {
         method: "POST",
         credentials: "include",
@@ -341,7 +341,7 @@ const page = () => {
     <button
       className="editbutton"
       onClick={() => {
-        if (pathname == "/report/Calorie%20Intake") {
+        if (pathname == "/report/Calorie%20Intake" || pathname == "/report/Cal%20Intake" ) {
           setShowCalorieIntakePopup(true);
         } else if (pathname == "/report/Sleep") {
           setShowSleepTrackPopup(true);
