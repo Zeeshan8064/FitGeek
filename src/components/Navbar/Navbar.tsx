@@ -14,7 +14,7 @@ const Navbar = () => {
   const [showpopup, setShowPopup] = React.useState<boolean>(false)
 
   const checklogin = async () => {
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'auth/checklogin', {
+    fetch('https://fitnessgeekbackend-production.up.railway.app/auth/checklogin', {
       method: 'POST',
       credentials: 'include',
     })
