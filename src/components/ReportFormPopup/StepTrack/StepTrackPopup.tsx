@@ -44,7 +44,7 @@ const StepTrackPopup: React.FC<StepTrackPopupProps> = ({
       return;
     }
 
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "steptrack/addstepentry", {
+    fetch("https://fitnessgeekbackend-production.up.railway.app/steptrack/addstepentry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const StepTrackPopup: React.FC<StepTrackPopupProps> = ({
 
   const getStepIntake = async () => {
     console.log("Fetching step data for date:", dayjs.utc(date).format("YYYY-MM-DD"));
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + "steptrack/getstepsbydate", {
+    fetch("https://fitnessgeekbackend-production.up.railway.app/steptrack/getstepsbydate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const StepTrackPopup: React.FC<StepTrackPopupProps> = ({
   const deleteStepIntake = async (item: any) => {
     console.log("Deleting step entry:", item._id);
     fetch(
-      process.env.NEXT_PUBLIC_BACKEND_API + "steptrack/deletestepentry",
+      "https://fitnessgeekbackend-production.up.railway.app/steptrack/deletestepentry",
       {
         method: "DELETE",
         headers: {
