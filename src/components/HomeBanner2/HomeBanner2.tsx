@@ -18,7 +18,7 @@ const HomeBanner2 = () => {
   const workoutid = searchParams.get('id');
 
   const getData = async () => {
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'workoutplans/workouts',{
+    fetch('https://fitnessgeekbackend-production.up.railway.app/workoutplans/workouts',{
       method: 'GET',
       credentials: 'include',
     })
