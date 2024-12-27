@@ -82,7 +82,7 @@ const AuthPopup: React.FC<AuthPopupProps> = ({ setShowPopup }) => {
   const handleSignup = () => {
     console.log(signupformData);
 
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'auth/register', {
+    fetch('https://fitnessgeekbackend-production.up.railway.app/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(signupformData),
