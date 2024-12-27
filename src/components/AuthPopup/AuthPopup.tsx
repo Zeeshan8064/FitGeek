@@ -57,7 +57,7 @@ const AuthPopup: React.FC<AuthPopupProps> = ({ setShowPopup }) => {
   // Handle login
   const handleLogin = () => {
     console.log(loginformData);
-    fetch(process.env.NEXT_PUBLIC_BACKEND_API + 'auth/login', {
+    fetch('https://fitnessgeekbackend-production.up.railway.app/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(loginformData),
