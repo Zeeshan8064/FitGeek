@@ -48,7 +48,7 @@ const getData = async () => {
     },
   ]
 
-  fetch(process.env.NEXT_PUBLIC_BACKEND_API+'report/getreport',{
+  fetch('https://fitnessgeekbackend-production.up.railway.app/report/getreport',{
     method: "GET",
     credentials: 'include'
   })
