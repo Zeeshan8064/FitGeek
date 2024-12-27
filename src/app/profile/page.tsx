@@ -12,7 +12,7 @@ const Profile = () => {
   const checkLogin = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API}auth/checklogin`,
+        'https://fitnessgeekbackend-production.up.railway.app/auth/checklogin',
         {
           method: "POST",
           credentials: "include",
@@ -28,7 +28,7 @@ const Profile = () => {
   const fetchProfileData = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API}profile/getprofile`,
+        'https://fitnessgeekbackend-production.up.railway.app/profile/getprofile',
         {
           method: "GET",
           credentials: "include",
@@ -55,7 +55,7 @@ const Profile = () => {
   const handleLogout = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API}auth/logout`,
+        'https://fitnessgeekbackend-production.up.railway.app/auth/logout',
         {
           method: "POST",
           credentials: "include",
