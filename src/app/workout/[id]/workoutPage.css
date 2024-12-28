@@ -6,58 +6,61 @@
     color: white;
     text-align: center;
 }
-h1.workout{
+h1.workout {
     -webkit-text-stroke: 1px var(--col1);
     color: transparent;
     font-size: 7.5em;
     font-weight: 900;
 }
 
-.workout__exercises{
+.workout__exercises {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
 }
 
-.workout__exercise{
+.workout__exercise {
     display: flex;
     align-items: center;
     margin-top: 30px;
     width: 100%;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
 }
 
-.workout__exercise--reverse{
+.workout__exercise--reverse {
     flex-direction: row-reverse;
 }
 
-.workout__exercise__image img{
+.workout__exercise__image img {
     height: auto;
     width: 300px;
+    max-width: 100%; /* Ensure the image doesn't overflow */
 }
 
-.workout__exercise__content{
+.workout__exercise__content {
     display: flex;
     flex-direction: column;
     text-align: left;
     gap: 10px;
     margin-left: 20px;
+    max-width: 100%; /* Prevent content overflow */
 }
 
-.workout__exercise--reverse .workout__exercise__content{
+.workout__exercise--reverse .workout__exercise__content {
     text-align: right;
     align-items: flex-end;
 }
 
-.workout__exercise__content h2{
+.workout__exercise__content h2 {
     -webkit-text-stroke: 1px var(--col1);
     color: transparent;
-    font-size: 50px;
+    font-size: 3rem; /* Adjust font size for smaller screens */
     font-weight: 900;
 }
 
-.workout__exercise__content span{
-    font-size: 20px;
+.workout__exercise__content span {
+    font-size: 1.2rem; /* Adjust font size */
     font-weight: 300;
     color: #ffffff;
     background-color: var(--col1);
@@ -66,20 +69,55 @@ h1.workout{
     width: fit-content;
 }
 
-.workout__exercise__content p{
-    font-size: 20px;
+.workout__exercise__content p {
+    font-size: 1.2rem; /* Adjust font size */
     font-weight: 300;
     color: rgb(237, 217, 33);
 }
 
-.workout__exercises h3{
-    --webkit-text-stroke: 1px rgb(237, 217, 33);
+.workout__exercises h3 {
+    -webkit-text-stroke: 1px rgb(237, 217, 33);
     color: rgb(237, 217, 33);
-    font-size: 7.5rem;
+    font-size: 4rem; /* Adjust size for smaller screens */
     font-weight: 900;
     text-align: center;
     border: 1px solid var(--col1);
-    width: 10rem;
+    width: 8rem; /* Reduce size */
     aspect-ratio: 1/1;
     border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1.workout {
+        font-size: 4rem;
+    }
+
+    .workout__exercise {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Center-align for smaller screens */
+    }
+
+    .workout__exercise__content {
+        text-align: center; /* Center-align text */
+        margin-left: 0; /* Remove margin */
+        align-items: center; /* Center content */
+    }
+
+    .workout__exercise__content h2 {
+        font-size: 2.5rem; /* Smaller headings */
+    }
+
+    .workout__exercise__content span {
+        font-size: 1rem; /* Smaller span text */
+    }
+
+    .workout__exercise__content p {
+        font-size: 1rem; /* Smaller paragraph text */
+    }
+
+    .workout__exercises h3 {
+        font-size: 3rem; /* Adjust number size */
+        width: 6rem; /* Adjust size */
+    }
 }
