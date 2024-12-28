@@ -1,57 +1,76 @@
-.authform {
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.authform{
+    display: flex;
     align-items: center;
     background-color: rgb(57, 55, 55);
-    width: 90%;
-    max-width: 500px;
-    border-radius: 20px;
+    width: 50%;
+    min-height: 50%;
+    border-radius: 50px;
     box-shadow: 0 0 10px rgba(210, 205, 205, 0.75);
+}
+
+.authform .left{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.authform .left img{
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.authform .right{
+    width: 50%;
+    height: 100%;
+    border-left: 1px solid var(--col1);
     padding: 20px;
 }
 
-.authform .right form {
-    display: flex;
+.authform .right h1{
+    -webkit-text-stroke: 1px var(--col1);
+    color: transparent;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin:10px 0px ;
+}
+
+.authform .right form{
+    display: float;
+    gap: 10px;
     flex-direction: column;
-    gap: 15px; /* Increased gap for better spacing */
 }
 
-.authform .right input,
-.authform .right select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(255, 255, 255);
-    font-size: 14px;
+.authform p{
+    margin: 10px 0px;
 }
 
-.authform .right button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ff4500;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.authform .form_input_leftright{
+    display: flex;
+    gap: 10px;
 }
 
-.authform .right button:hover {
-    background-color: #e63900;
-}
-
-/* Media Query for Smaller Screens */
-@media (max-width: 768px) {
-    .authform {
-        padding: 15px;
-    }
-
-    .authform .right {
-        width: 100%;
-    }
-
-    .authform .right form {
-        gap: 10px;
-    }
+.popup .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    line-height: 0;
 }
