@@ -1,4 +1,4 @@
-.popup{
+.popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,69 +8,91 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.75);
 }
 
-.authform{
+.authform {
     display: flex;
+    flex-direction: column; /* Updated for better stacking on smaller screens */
     align-items: center;
     background-color: rgb(57, 55, 55);
-    width: 50%;
-    min-height: 50%;
-    border-radius: 50px;
+    width: 90%; /* Adjusted for mobile screens */
+    max-width: 500px; /* Maximum width for larger devices */
+    min-height: 60%; /* Slightly increased for better spacing */
+    border-radius: 20px; /* Adjusted for smaller curvature */
     box-shadow: 0 0 10px rgba(210, 205, 205, 0.75);
+    padding: 20px; /* Added padding for inner spacing */
+    overflow: hidden; /* Prevent overflow on small devices */
 }
 
-.authform .left{
-    width: 45%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.authform .left {
+    display: none; /* Hide image section on small devices */
 }
 
-.authform .left img{
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
+.authform .right {
+    width: 100%; /* Full width for content */
+    padding: 15px;
 }
 
-.authform .right{
-    width: 50%;
-    height: 100%;
-    border-left: 1px solid var(--col1);
-    padding: 20px;
-}
-
-.authform .right h1{
+.authform .right h1 {
     -webkit-text-stroke: 1px var(--col1);
     color: transparent;
-    font-size: 20px;
+    font-size: 18px; /* Reduced font size for mobile */
     font-weight: 400;
     text-align: center;
-    margin:10px 0px ;
+    margin: 10px 0;
 }
 
-.authform .right form{
-    display: float;
-    gap: 10px;
-    flex-direction: column;
-}
-
-.authform p{
-    margin: 10px 0px;
-}
-
-.authform .form_input_leftright{
+.authform .right form {
     display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.popup .close{
+.authform p {
+    margin: 10px 0;
+    font-size: 14px; /* Reduced font size for readability on smaller screens */
+}
+
+.authform .form_input_leftright {
+    display: flex;
+    flex-direction: column; /* Adjusted layout for smaller devices */
+    gap: 10px;
+}
+
+.popup .close {
     position: absolute;
     top: 10px;
     right: 10px;
     border-radius: 50%;
     line-height: 0;
+    font-size: 18px; /* Ensure button is large enough to click */
+    cursor: pointer;
+}
+
+/* Add media query for desktop */
+@media (min-width: 768px) {
+    .authform {
+        flex-direction: row; /* Restore row layout on larger devices */
+        width: 50%;
+        min-height: 50%;
+        border-radius: 50px;
+    }
+
+    .authform .left {
+        display: flex; /* Restore image section on larger devices */
+        width: 45%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .authform .left img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+    }
+
+    .authform .right {
+        width: 50%;
+        border-left: 1px solid var(--col1);
+    }
 }
