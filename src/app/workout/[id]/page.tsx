@@ -17,14 +17,13 @@ const WorkoutPage: React.FC = () => {
     const getWorkout = async () => {
       console.log("getWorkout", workoutId);
       try {
-        const response = await fetch(
-          `https://fitnessgeekbackend-production.up.railway.app/workoutplans/workouts/${workoutId}`
-
-          {
-            method: "GET",
-            credentials: "include",
-          }
-        );
+const response = await fetch(
+  `https://fitnessgeekbackend-production.up.railway.app/workoutplans/workouts/${workoutId}`, // Corrected comma placement
+  {
+    method: "GET",
+    credentials: "include",
+  }
+);
         const result = await response.json();
         if (result.ok) {
           setData(result.data);
