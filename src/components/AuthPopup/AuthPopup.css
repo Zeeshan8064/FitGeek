@@ -1,98 +1,57 @@
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .authform {
     display: flex;
-    flex-direction: column; /* Updated for better stacking on smaller screens */
+    flex-direction: column;
     align-items: center;
     background-color: rgb(57, 55, 55);
-    width: 90%; /* Adjusted for mobile screens */
-    max-width: 500px; /* Maximum width for larger devices */
-    min-height: 60%; /* Slightly increased for better spacing */
-    border-radius: 20px; /* Adjusted for smaller curvature */
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(210, 205, 205, 0.75);
-    padding: 20px; /* Added padding for inner spacing */
-    overflow: hidden; /* Prevent overflow on small devices */
-}
-
-.authform .left {
-    display: none; /* Hide image section on small devices */
-}
-
-.authform .right {
-    width: 100%; /* Full width for content */
-    padding: 15px;
-}
-
-.authform .right h1 {
-    -webkit-text-stroke: 1px var(--col1);
-    color: transparent;
-    font-size: 18px; /* Reduced font size for mobile */
-    font-weight: 400;
-    text-align: center;
-    margin: 10px 0;
+    padding: 20px;
 }
 
 .authform .right form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Increased gap for better spacing */
 }
 
-.authform p {
-    margin: 10px 0;
-    font-size: 14px; /* Reduced font size for readability on smaller screens */
+.authform .right input,
+.authform .right select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
 }
 
-.authform .form_input_leftright {
-    display: flex;
-    flex-direction: column; /* Adjusted layout for smaller devices */
-    gap: 10px;
-}
-
-.popup .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 50%;
-    line-height: 0;
-    font-size: 18px; /* Ensure button is large enough to click */
+.authform .right button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-/* Add media query for desktop */
-@media (min-width: 768px) {
+.authform .right button:hover {
+    background-color: #e63900;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
     .authform {
-        flex-direction: row; /* Restore row layout on larger devices */
-        width: 50%;
-        min-height: 50%;
-        border-radius: 50px;
-    }
-
-    .authform .left {
-        display: flex; /* Restore image section on larger devices */
-        width: 45%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .authform .left img {
-        width: 80%;
-        height: 80%;
-        object-fit: contain;
+        padding: 15px;
     }
 
     .authform .right {
-        width: 50%;
-        border-left: 1px solid var(--col1);
+        width: 100%;
+    }
+
+    .authform .right form {
+        gap: 10px;
     }
 }
