@@ -66,7 +66,7 @@ const AuthPopup: React.FC<AuthPopupProps> = ({ setShowPopup }) => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if (data.ok) {
+        if (data.success) {
           toast.success(data.message);
           setShowPopup(false);
         } else {
