@@ -334,7 +334,7 @@ const page = () => {
           />
         </>
       ) : (
-        <p>Loading data...</p>
+        <p>No Data To Display(Add Data To Display)</p>
       )}
     </div>
 
